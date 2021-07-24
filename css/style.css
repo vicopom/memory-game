@@ -1,0 +1,174 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #d73a37;
+}
+body header h1 {
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+body header #timer {
+  font-size: 2rem;
+  color: #ffffff;
+}
+body .row > * {
+  width: auto;
+}
+body p {
+  color: #ffffff;
+}
+body .jumbotron {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+body .jumbotron span {
+  display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+body .btn-primary {
+  background-color: #fcfdda;
+  color: #d73a37;
+  font-weight: 700;
+  border: 2px solid #d73a37;
+  transition: transform 0.3s;
+}
+body .btn-primary:hover,
+body .btn-primary:focus {
+  background-color: #fcfdda;
+  color: #d73a37;
+  border-color: #d73a37;
+  transform: scale(1.2);
+}
+body #welcome,
+body #result {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: rgba(215, 58, 55, 0.9);
+}
+body #welcome > .container,
+body #result > .container {
+  height: 100%;
+}
+body #welcome > .container > .row,
+body #result > .container > .row {
+  height: 100%;
+}
+body #welcome > .container #scores,
+body #result > .container #scores {
+  margin-bottom: 2rem;
+}
+body #welcome > .container #scores h3,
+body #result > .container #scores h3 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+body #welcome > .container #scores table,
+body #result > .container #scores table {
+  margin: auto;
+  width: 20rem;
+  border: 1px solid #fcfdda;
+}
+body #welcome > .container #scores table td,
+body #result > .container #scores table td {
+  border: 1px solid #fcfdda;
+  padding: 0.5rem;
+}
+body #welcome > .container #scores table thead,
+body #result > .container #scores table thead {
+  background-color: #fcfdda;
+  color: #d73a37;
+}
+body #welcome > .container #scores table tbody td,
+body #result > .container #scores table tbody td {
+  color: #fcfdda;
+}
+body #result {
+  display: none;
+}
+body #result > .container {
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+body #result > .container h2 {
+  font-size: 2rem;
+}
+body main .playing-card {
+  background-color: transparent;
+  width: 11.11%;
+  height: 10rem;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+body main .playing-card .inner-playing-card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  transform-style: preserve-3d;
+}
+body main .playing-card .inner-playing-card .front,
+body main .playing-card .inner-playing-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  border: 1px solid #fcfdda;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}
+body main .playing-card .inner-playing-card .front {
+  background-color: #d73a37;
+  background-image: url("../img/logo.svg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body main .playing-card .inner-playing-card .back {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+body main .playing-card.active .inner-playing-card,
+body main .playing-card.resolved .inner-playing-card {
+  transform: rotateY(180deg);
+}
+body main .playing-card.resolved .inner-playing-card .front,
+body main .playing-card.resolved .inner-playing-card .back {
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2);
+}

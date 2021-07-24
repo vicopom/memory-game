@@ -1,0 +1,60 @@
+.ombre(@x,@y,@taille,@couleur){
+	box-shadow:@x @y @taille @couleur;
+	-webkit-box-shadow:@x @y @taille @couleur;
+	-moz-box-shadow:@x @y @taille @couleur;
+	-o-box-shadow:@x @y @taille @couleur;
+}
+.ombre(@x,@y,@taille,@durete,@couleur){
+	box-shadow:@x @y @taille @durete @couleur;
+	-webkit-box-shadow:@x @y @taille @durete @couleur;
+	-moz-box-shadow:@x @y @taille @durete @couleur;
+	-o-box-shadow:@x @y @taille @durete @couleur;
+}
+.arrondi(@taille){
+	border-radius:@taille !important;	
+	-webkit-border-radius:@taille !important;	
+	-moz-border-radius:@taille !important;		
+	-o-border-radius:@taille !important;		
+}
+.transition(@delai){
+	transition:all @delai ease-in-out !important;	
+	-webkit-transition:all @delai ease-in-out !important;	
+	-moz-transition:all @delai ease-in-out !important;	
+	-o-transition:all @delai ease-in-out !important;		
+}
+.transitionSpe(@delai,@prop){
+	transition:@prop @delai ease-in-out !important;	
+	-webkit-transition:@prop @delai ease-in-out !important;	
+	-moz-transition:@prop @delai ease-in-out !important;	
+	-o-transition:@prop @delai ease-in-out !important;		
+}
+.transitionColor(@delai){
+	transition:color @delai ease-in-out !important;	
+	-webkit-transition:color @delai ease-in-out !important;	
+	-moz-transition:color @delai ease-in-out !important;	
+	-o-transition:color @delai ease-in-out !important;		
+}
+.agrandir(@x,@y){
+	translate3d( 0, 0, 0);
+	-webkit-translate3d( 0, 0, 0);
+	-moz-translate3d( 0, 0, 0);
+	-o-translate3d( 0, 0, 0);
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	transform:translateZ(0) perspective(1px) scale3d(@x,@y,1);
+	-webkit-transform:translateZ(0) perspective(1px) scale3d(@x,@y,1);
+	-moz-transform:translateZ(0) perspective(1px) scale3d(@x,@y,1);
+	-o-transform:translateZ(0) perspective(1px) scale3d(@x,@y,1);
+}
+.rotation(@angle){
+	transform:rotate(@angle);
+	-moz-transform:rotate(@angle);
+	-webkit-transform:rotate(@angle);
+}
+.rotation3D(@angle){
+	transform:rotateY(@angle);
+	-moz-transform:rotateY(@angle);
+	-webkit-transform:rotateY(@angle);
+}
