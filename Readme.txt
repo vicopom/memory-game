@@ -4,12 +4,14 @@
 
 Ce jeu de Mémory instancie des paires de cartes (class PlayingCard) sur un plateau de jeu (class PlayingBoard)
 Le but du jeu est de résoudre le plateau avant la fin du compte à rebourd
+
 Si toutes les paires de cartes sont retrouvées avant la fin du temps imparti, le score (class Score) effectué par le joueur est enregistré en BDD
 Si toutes les paires de cartes ne sont pas retrouvées avant la fin du temps imparti, le joueur est invité à recommencer une partie
 Le tableau des meilleurs scores est affiché (class gameScore) au lancement du jeu et en cas de réussite
 
 /*--- GESTION DU JEU ---*/
 Les éléments du jeu (plateau de jeu, cartes, score, tableau des scores) sont des Objets PHP (Cf. Dossier class/)
+Les variables globales du jeu (Nombres de cartes et Temps de jeu) sont définies dans le fichier params.php
 Les actions utilisateurs sont toutes gérées en jQuery (Cf. Dossier js/memory.js)
 Le traitement de la réussite ou l'échec de la partie est effectuée en AJAX entre des fonctions PHP (Cf. Dossier functions/) et des actions en jQuery (Cf. Dossier js/memory.js)
 

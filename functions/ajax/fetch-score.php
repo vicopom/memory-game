@@ -1,8 +1,12 @@
 <?php
+/*
+    FONCTION APPELEE EN AJAX POUR RECUPERER LE TABLEAU DES MEILLEURS SCORES
+*/
+
 
 // Déclaration des dépendances
-require '../vendor/autoload.php';
-require '../functions/functions.php';
+require '../../vendor/autoload.php';
+require '../../functions/functions.php';
 
 /*
 Déclaration des espaces de noms dont on a besoin

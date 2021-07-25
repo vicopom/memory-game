@@ -4,6 +4,7 @@
 require 'vendor/autoload.php';
 require 'vendor/leafo/lessphp/lessc.inc.php';
 require 'functions/functions.php';
+require 'public/params.php';
 
 /*
 Déclaration des espaces de noms
@@ -27,7 +28,7 @@ $scores = fetchScores(); //Fonction d'import des cartes déclarée dans /functio
 $gameScore = new GameScore($scores);
 
 //Importation du header de notre page
-require 'header.php';
+require 'public/header.php';
 
 ?>
 
@@ -76,6 +77,6 @@ require 'header.php';
 <?php
 
 //Importation du footer de notre page
-require 'footer.php';
+require 'public/footer.php';
 
 ?>

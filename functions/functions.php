@@ -1,5 +1,4 @@
 <?php
-$cardsNumber = 9;
 
 /*
 Déclaration des espaces de noms dont on a besoin

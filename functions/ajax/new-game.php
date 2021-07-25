@@ -1,8 +1,13 @@
 <?php
 
+/*
+    FONCTION APPELEE EN AJAX POUR RECUPERER UN NOUVEAU PLATEAU DE JEU
+*/
+
 // Déclaration des dépendances
-require '../functions/functions.php';
-require '../vendor/autoload.php';
+require '../../functions/functions.php';
+require '../../public/params.php';
+require '../../vendor/autoload.php';
 
 /*
 Déclaration des espaces de noms dont on a besoin

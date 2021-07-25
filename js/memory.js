@@ -16,11 +16,20 @@ jQuery(document).ready(function($){
 
 /* initialiseGame() : Initialisation d'une nouvelle partie
     -> On fait disparaitre l'élément Welcome grâce à la fonction native de jQuery fadeOut()
+    -> On accède à la variable $gameTime globale. Si elle n'est pas instanciée par défaut, elle vaut 3
     -> On initialise le compte à rebord avec la fonction countDown : Au terme du décompte de temps, on lance la fonction timesUp
 */
 function initialiseGame(){
     $("#welcome").fadeOut(); 
-    countDown( 3 * 60 * 1000, timesUp); 
+    $gameTime = $gameTime || 3;
+
+    countDown( $gameTime * 60 * 1000, timesUp); 
+}
+
+function getGameTime(){
+    $.get('functions/ajax/get-game-time.php', false).done(function(response){
+        $gameTime = response;
+    });
 }
 
 /* timesUp() : Défini les actions à mener lorsque le compte à rebord est arrivé à 00:00
@@ -47,7 +56,7 @@ function playAgain(){
         -> Nom de la fonction de retour qui nous permettra d'afficher le contenu du résultat de notre requête
     */
     $.get(
-        'functions/new-game.php',
+        'functions/ajax/new-game.php',
         'false',
         initialiseNewGame,
         'text' // Format des données reçues.
@@ -81,7 +90,7 @@ function gameWon(remainingTime){
         -> Fonction de retour qui nous permettra d'afficher une
     */
     $.post(
-        'functions/register-score.php', // Le fichier cible côté serveur.
+        'functions/ajax/register-score.php', // Le fichier cible côté serveur.
         {
             score : remainingTime,
         },
@@ -97,7 +106,7 @@ function gameWon(remainingTime){
             -> Nom de la fonction de retour qui nous permettra d'afficher le contenu du résultat de notre requête
         */
         $.get(
-            'functions/fetch-score.php', 
+            'functions/ajax/fetch-score.php', 
             false,
             boardWon, 
             'text' 
